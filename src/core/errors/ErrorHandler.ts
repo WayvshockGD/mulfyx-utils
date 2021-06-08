@@ -1,3 +1,4 @@
+import { config } from "../config";
 import { UtilClient } from "../UtilClient";
 import ErrorClass from "./ErrorClass";
 import ErrorEmbed from "./ErrorEmbed";
@@ -32,7 +33,9 @@ export class startLogging extends ErrorClass {
         this.log({
             args: [id.toString(), `${error}`],
             color: "green"
-        })
+        });
+
+        return this.send(config({ item: "log" }), `Handing shard id \`${id}\``);
     }
 
     private send(channel: string, content: string) {

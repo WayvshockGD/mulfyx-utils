@@ -1,9 +1,6 @@
 let rules = [
-    "<",
-    "@",
-    "&",
-    ">",
-    "#"
+    "<", "@", "&",
+    ">", "#", "!"
 ]
 
 export default class Resolver {

@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 type Data = "token" | "prefix" | "announceChannel";
+type emotes = "check" | "deny"; 
 
 export function config({ item , encode }: { item: Data, encode?: boolean }) {
     let items = {
@@ -24,6 +25,15 @@ export function getOwners() {
         "609899399358971924",
         "571577749647654933"
     ]
+}
+
+export function getDefaultEmote({ item }: { item: emotes }) {
+    let emotes = {
+        check: "✅",
+        deny: "❌"
+    }
+
+    return emotes[item];
 }
 
 export let clientOptions: Eris.ClientOptions = {

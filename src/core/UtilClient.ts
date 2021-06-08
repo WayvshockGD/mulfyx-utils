@@ -1,5 +1,5 @@
 import Eris from "eris";
-import { CommandOptions, commandAdditions } from "../../data/CommandData";
+import { CommandOptions } from "../../data/CommandData";
 import { config, clientOptions } from "./config";
 import { readdirSync } from "fs";
 import CommandHandler from "../handlers/CommandHandler";

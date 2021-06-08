@@ -57,7 +57,7 @@ export default class Util {
         }));
     }
 
-    argError(message: Eris.TextableChannel) {
-        return this.error(message, "There were no arguments.");
+    argError(message: Eris.TextableChannel, arg: string) {
+        return this.error(message, `There were no arguments at ${arg}`);
     }
 }

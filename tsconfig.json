@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "module": "CommonJS",
+        "target": "ESNext",
+        "watch": true,
+        "esModuleInterop": true,
+        "strict": true,
+        "pretty": true,
+        "resolveJsonModule": true,
+        "outDir": "./build",
+        "allowJs": true
+    }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "mulfyx-utils",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./build/src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Wayv & Mulfyx",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "eris": "^0.15.1",
+    "loglevel": "^1.7.1"
+  },
+  "devDependencies": {
+    "@types/node": "^15.12.0",
+    "@types/ws": "^7.4.4",
+    "typescript": "^4.3.2"
+  }
+}

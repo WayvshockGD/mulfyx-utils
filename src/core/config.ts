@@ -2,15 +2,28 @@ import Eris from "eris";
 import dotenv from "dotenv";
 dotenv.config();
 
-type Data = "token" | "prefix" | "announceChannel";
+type Data = "token" | "prefix" | "announceChannel" | "log";
 type emotes = "check" | "deny"; 
 
-export function config({ item , encode }: { item: Data, encode?: boolean }) {
+/**
+ * Grabbing the items now.
+ * 
+ * @example 
+ * config({ item: "prefix" });
+*/
+export function config({ item , encode }: { 
+    /** Grabbing the item from config */
+    item: Data, 
+    /** Encode links if there are any. */
+    encode?: boolean 
+}) {
+
     let items = {
         token: `${process.env.TOKEN}`,
         prefix: "=",
 
-        announceChannel: "790484719632252979"
+        announceChannel: "790484719632252979",
+        log: "851874906739834901"
     }
 
     if (encode) {
@@ -23,7 +36,8 @@ export function config({ item , encode }: { item: Data, encode?: boolean }) {
 export function getOwners() {
     return [
         "609899399358971924",
-        "571577749647654933"
+        "571577749647654933",
+        "708557575779516426"
     ]
 }
 

@@ -2,6 +2,7 @@ import Command from "../Command";
 import { cpus } from "os";
 import proccess from "process";
 import { getOwners } from "../core/config";
+import { execSync } from "child_process";
 import { devDependencies, dependencies } from "../../package.json";
 
 export = new Command({
@@ -10,6 +11,8 @@ export = new Command({
 
     execute: ({ util, message, client }) => {
         let dev = client.users.get(getOwners()[0]);
+
+        let gitVersion = execSync('git rev-parse --short HEAD', {encoding: 'utf8'}).slice(0, -1);
 
         let depend = [
             `Dependency Versions`,
@@ -22,6 +25,11 @@ export = new Command({
                 title: "Showing stats",
                 description: depend.join("\n"),
                 fields: [
+                    {
+                        name: "Latest commit",
+                        value: `\`${gitVersion}\``,
+                        inline: false
+                    },
                     {
                         name: "Cpus",
                         value: cpus.length.toString(),

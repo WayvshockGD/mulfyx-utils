@@ -17,6 +17,8 @@ interface splitOtps {
     split: string|RegExp;
 }
 
+type colors = "RED" | "GREEN";
+
 export default class Util {
 
     get MessageEmbed() {
@@ -43,6 +45,15 @@ export default class Util {
                 }, options.deleteAfter);
             }
         })
+    }
+
+    color(color: colors) {
+        let colorStrutureTree = {
+            RED: 0xF94552,
+            GREEN: 0x99eeff
+        }
+
+        return colorStrutureTree[color];
     }
 
     code(options: codeOptions) {

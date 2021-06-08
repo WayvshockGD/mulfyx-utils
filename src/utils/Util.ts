@@ -1,5 +1,6 @@
 import Eris from "eris";
 import EmbedBuilder from "./EmbedBuilder";
+import Resolver from "./Resolver";
 
 interface codeOptions {
     lang?: string;
@@ -20,6 +21,10 @@ export default class Util {
 
     get MessageEmbed() {
         return EmbedBuilder;
+    }
+
+    get resolver() {
+        return new Resolver();
     }
 
     splitMessage(splitOptions: splitOtps): string[] {

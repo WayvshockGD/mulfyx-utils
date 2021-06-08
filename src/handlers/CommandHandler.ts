@@ -22,7 +22,8 @@ export default class CommandHandler {
         client.data.set(`commands.${message.author.id}`, {
             commandUsage: {
                 command: args[0],
-                author: message.author.username
+                author: message.author.username,
+                args: args.slice(1)
             }
         });
 

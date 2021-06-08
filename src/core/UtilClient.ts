@@ -19,6 +19,7 @@ interface extraData {
     commandUsage?: {
         command: string;
         author: string;
+        args: string[];
     }
 }
 

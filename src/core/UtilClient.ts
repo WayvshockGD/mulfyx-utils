@@ -2,6 +2,7 @@ import Eris from "eris";
 import { CommandOptions } from "../../data/CommandData";
 import { config, clientOptions } from "./config";
 import { readdirSync } from "fs";
+import ErrorHandler from "./errors/ErrorHandler";
 import CommandHandler from "../handlers/CommandHandler";
 
 interface pathOptions {
@@ -45,6 +46,8 @@ export class UtilClient extends Eris.Client {
             type: "commands"
         });
 
+        new ErrorHandler(this);
+
 
         this.on("ready", this.onReady.bind(this));
         // @ts-ignore
@@ -69,7 +72,7 @@ export class UtilClient extends Eris.Client {
                 message: message.content,
                 author: message.author.username
             }
-        })
+        });
     }
 
     public onReady() {
